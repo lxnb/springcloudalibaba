@@ -20,7 +20,7 @@ public class InventoryController {
 
     @GetMapping("test")
     public void test(){
-        log.info("---{}---",path);
+        log.info("----{}----",path);
     }
 
 
