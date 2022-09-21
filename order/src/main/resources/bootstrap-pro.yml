@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: naocs-service
+  profiles:
+    active: pro
+  cloud:
+    nacos:
+      config:
+        # 配置文件的环境
+        group: ${spring.profiles.active}
+        # 配置文件的格式
+        file-extension: yaml
+        # 配置中心的地址
+        server-addr: 81.70.52.162:8848
+        # 配置文件prefix
+        #prefix: ${spring.application.name}
+        #命名空间
+        namespace: cb005396-ccec-4375-a328-6338fc80c675
+      discovery:
+        server-addr: 81.70.52.162:8848
+        group: ${spring.profiles.active}
+        namespace: cb005396-ccec-4375-a328-6338fc80c675

@@ -1,0 +1,28 @@
+server:
+  port: 8011
+spring:
+  application:
+    name: cloud-inventory
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      config:
+        # 配置文件的环境
+        group: ${spring.profiles.active}
+        # 配置文件的格式
+        file-extension: yaml
+        # 配置中心的地址
+        server-addr: 127.0.0.1:8848
+        # 配置文件prefix
+        #prefix: ${spring.application.name}
+        #命名空间
+        namespace: 743eee14-85dc-42ab-b9b2-c32c5cdca956
+        shared-configs[0]:
+          data-id: cloud-common-dev.yaml # 配置文件名-Data Id
+          group: dev   # 默认为DEFAULT_GROUP
+          refresh: true   # 是否动态刷新，默认为false
+      discovery:
+        server-addr: 127.0.0.1:8848
+        group: ${spring.profiles.active}
+        namespace: 743eee14-85dc-42ab-b9b2-c32c5cdca956
