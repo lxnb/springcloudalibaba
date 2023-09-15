@@ -22,6 +22,7 @@ public class InventoryServiceImpl implements InventoryService {
         Inventory inventory = inventoryMapper.selectOne(lambdaQueryWrapper);
         inventory.setInventoryCount(inventory.getInventoryCount()-1);
         inventoryMapper.updateById(inventory);
+        int a=1/0;
         return "ok";
     }
 }

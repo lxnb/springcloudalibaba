@@ -23,6 +23,7 @@ public class InventoryFallBack implements InventoryFeign {
 
     @Override
     public String reduceInventory(String id) {
+        System.out.println("调用扣除库存失败");
         return null;
     }
 }

@@ -33,8 +33,8 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    @Transactional
-    //@GlobalTransactional
+    @GlobalTransactional
+    //@Transactional
     public String reduceInventory(String id) {
         //新增订单
         Order order=new Order();
@@ -44,7 +44,7 @@ public class OrderServiceImpl implements OrderService {
         //扣减库存
         String s = inventoryFeign.reduceInventory(id);
         //手动报错测试分布式事务
-        int a=1/0;
+        //int a=1/0;
         return "ok";
     }
 }
